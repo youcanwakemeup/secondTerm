@@ -6,13 +6,9 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import pro.sky.secondTerm.Exceptions.RandomAmountGreaterThanTotal;
-import pro.sky.secondTerm.Question;
-import pro.sky.secondTerm.services.ExaminerService;
+import pro.sky.secondTerm.exceptions.RandomAmountGreaterThanTotal;
 import pro.sky.secondTerm.services.ExaminerServiceImpl;
 import pro.sky.secondTerm.services.QuestionService;
-
-import java.util.*;
 
 import static org.mockito.Mockito.when;
 import static pro.sky.secondTerm.ConstantsForTests.*;
@@ -35,6 +31,7 @@ public class ExaminerServiceImplTest {
         when(questionService.getRandomQuestion()).thenReturn(firstQuestion, secondQuestion, thirdQuestion);
         Assertions.assertEquals(amount, examinerService.getQuestions(amount).size());
     }
+
     @Test
     public void shouldThrowAnException() {
         Assertions.assertThrows(RandomAmountGreaterThanTotal.class, () -> {

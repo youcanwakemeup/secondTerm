@@ -1,13 +1,14 @@
 package pro.sky.secondTerm.services;
 
 import org.springframework.stereotype.Service;
-import pro.sky.secondTerm.Question;
+import pro.sky.secondTerm.model.Question;
 
 import java.util.*;
 
 @Service
 public class JavaQuestionService implements QuestionService {
-    Set<Question> questions = new HashSet<>();
+    private final Set<Question> questions = new HashSet<>();
+
     @Override
     public Question add(String question, String answer) {
         Question questionTemp = new Question(question, answer);

@@ -2,7 +2,6 @@ package pro.sky.secondTerm.servicesTest;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import pro.sky.secondTerm.Question;
 import pro.sky.secondTerm.services.JavaQuestionService;
 import pro.sky.secondTerm.services.QuestionService;
 
@@ -17,6 +16,7 @@ public class JavaQuestionServiceTest {
         Assertions.assertEquals(questionService.add(firstQuestion), firstQuestion);
         Assertions.assertEquals(sizeBeforeAdding + 1, questionService.getAll().size());
     }
+
     @Test
     public void shouldRemoveQuestion() {
         questionService.add(firstQuestion);
@@ -26,6 +26,7 @@ public class JavaQuestionServiceTest {
         Assertions.assertEquals(secondQuestion, questionService.remove(secondQuestion));
         Assertions.assertEquals(sizeBeforeAdding - 1, questionService.getAll().size());
     }
+
     @Test
     public void shouldReturnQuestions() {
         questionService.add(firstQuestion);
@@ -33,6 +34,7 @@ public class JavaQuestionServiceTest {
         questionService.add(thirdQuestion);
         Assertions.assertEquals(questionService.getAll().size(), 3);
     }
+
     @Test
     public void shouldReturnRandomQuestion() {
         questionService.add(firstQuestion);

@@ -1,5 +1,7 @@
 package pro.sky.secondTerm;
 
+import pro.sky.secondTerm.model.Question;
+
 import java.util.Collection;
 import java.util.Set;
 
